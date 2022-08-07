@@ -8,7 +8,7 @@ const Sidebar = () => {
     return (
         <div
             className="pl-7 pr-[25px] w-[240px] text-primary-text relative 
-        before:absolute before:w-full before:h-full before:left-0 before:bg-[hsla(0,0%,100%,0.05)] 
+        before:absolute before:w-full before:h-full before:left-0 before:bg-alpha-bg 
         before:z-50 before:pointer-events-none"
         >
             <div className="h-[70px] flex items-center">

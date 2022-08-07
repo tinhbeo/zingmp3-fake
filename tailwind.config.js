@@ -9,6 +9,7 @@ module.exports = {
                 'primary-text': '#DADADA',
                 'purple-primary': '#7200a1',
                 'text-hover': '#c662ef',
+                'alpha-bg': 'hsla(0,0%,100%,0.1)',
             },
             fontFamily: {
                 inter: ['Inter', 'sans-serif'],
