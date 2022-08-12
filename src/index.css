@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    .items-header {
-        @apply w-10 h-10 rounded-full bg-alpha-bg flex items-center justify-center mr-[10px];
-    }
+  .items-header {
+    @apply w-10 h-10 rounded-full bg-alpha-bg flex items-center justify-center mr-[10px];
+  }
 }
