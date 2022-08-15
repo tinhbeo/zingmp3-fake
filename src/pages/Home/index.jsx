@@ -2,6 +2,7 @@ import SliderHome from 'pages/Home/components/SliderHome';
 import { VscChevronRight } from 'react-icons/vsc';
 
 import { NavLink } from 'react-router-dom';
+import Media from './components/Media';
 import MusicCard from './components/MusicCard';
 const Home = () => {
   return (
@@ -43,14 +44,42 @@ const Home = () => {
 
       <div className="mt-[30px]">
         <h3 className="mb-4 font-bold text-xl capitalize">Mới phát hành</h3>
-        <div>
-          <button className="py-1 px-6 rounded-full bg-purple-primary text-white uppercase border border-purple-primary text-xs mr-4">
-            Bài hát
-          </button>
+        <div className="mb-[30px] flex items-center justify-between">
+          <div>
+            <button className="py-1 px-6 rounded-full bg-purple-primary text-white uppercase border border-purple-primary text-xs mr-4">
+              Bài hát
+            </button>
 
-          <button className="py-1 px-6 rounded-full bg-transparent text-white uppercase text-xs border-border-alpha">
-            ALBUM
-          </button>
+            <button className="py-1 px-6 rounded-full bg-transparent text-white uppercase text-xs border-border-alpha">
+              ALBUM
+            </button>
+          </div>
+          <NavLink
+            to="#"
+            href="./"
+            className="flex items-center text-xs uppercase text-text-gray font-medium hover:text-text-hover"
+          >
+            tất cả
+            <VscChevronRight className="text-base ml-[6px]" />
+          </NavLink>
+        </div>
+
+        <div className="flex gap-5">
+          <div className="w-1/3">
+            <Media vip={true} />
+            <Media />
+            <Media vip={true} />
+          </div>
+          <div className="w-1/3">
+            <Media />
+            <Media vip={true} />
+            <Media />
+          </div>
+          <div className="w-1/3">
+            <Media />
+            <Media vip={true} />
+            <Media vip={true} />
+          </div>
         </div>
       </div>
     </div>
