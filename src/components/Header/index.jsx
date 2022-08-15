@@ -10,7 +10,7 @@ import 'tippy.js/dist/tippy.css';
 
 const Header = () => {
   return (
-    <div className="h-[70px] flex items-center fixed top-0 left-60 right-0 px-14 bg-layout-bg">
+    <header className="h-[70px] flex items-center fixed top-0 left-60 right-0 px-14 bg-layout-bg z-50">
       <div className="flex items-center flex-grow mr-[10px]">
         <button disabled>
           <IoIosArrowRoundBack className="w-6 h-6 mr-5 text-gray-600" />
@@ -26,7 +26,7 @@ const Header = () => {
               className="peer bg-transparent outline-none border-none py-[5px] w-full leading-8 text-white placeholder:text-white"
               placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát ...."
             />
-            <ul className="hidden absolute w-full left-0 top-full rounded-b-[20px] overflow-hidden peer-focus:block z-10">
+            <ul className="hidden absolute w-full left-0 top-full rounded-b-[20px] overflow-hidden peer-focus:block">
               <div className="py-3 px-[10px] bg-primary-bg">
                 <div className="font-bold px-[10px] pb-2">Đề xuất cho bạn</div>
                 <div className="flex items-center py-2 px-[10px] hover:bg-alpha-bg cursor-pointer">
@@ -73,7 +73,7 @@ const Header = () => {
         </Tippy>
         <img className="items-header" src="https://avatar.talk.zdn.vn/default" alt="avatar" width={40} height={40} />
       </div>
-    </div>
+    </header>
   );
 };
 

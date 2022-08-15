@@ -6,7 +6,9 @@ import MusicCard from './components/MusicCard';
 const Home = () => {
   return (
     <div className="h-screen">
-      <SliderHome />
+      <div className="py-8">
+        <SliderHome />
+      </div>
 
       <div className="mt-[30px]">
         <h3 className="flex justify-between items-center mb-4 font-bold text-xl capitalize">
@@ -46,7 +48,7 @@ const Home = () => {
             Bài hát
           </button>
 
-          <button className="py-1 px-6 rounded-full bg-transparent text-white uppercase text-xs border border-border-alpha">
+          <button className="py-1 px-6 rounded-full bg-transparent text-white uppercase text-xs border-border-alpha">
             ALBUM
           </button>
         </div>
