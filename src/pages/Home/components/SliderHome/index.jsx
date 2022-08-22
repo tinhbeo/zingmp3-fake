@@ -1,12 +1,12 @@
-import React from 'react';
-import { images } from 'static/data';
-import { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import ButtonSlideNext from '../ButtonSlideNext';
-import ButtonSlidePrev from '../ButtonSlidePrev';
+import React from "react";
+import { images } from "static/data";
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ButtonSlideNext from "../ButtonSlideNext";
+import ButtonSlidePrev from "../ButtonSlidePrev";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
 
 const SliderHome = () => {
   const navigationPrevRef = React.useRef(null);
@@ -16,14 +16,21 @@ const SliderHome = () => {
       className="group"
       modules={[Navigation]}
       spaceBetween={20}
-      grabCursor={true}
       loop={true}
       slidesPerView={3}
-      navigation={{ prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current }}
+      navigation={{
+        prevEl: navigationPrevRef.current,
+        nextEl: navigationNextRef.current,
+      }}
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
-          <img className="w-full rounded-md h-44" src={image} loading="lazy" alt="" />
+          <img
+            className="w-full rounded-md h-44 object-cover"
+            src={image}
+            loading="lazy"
+            alt="slide-img"
+          />
         </SwiperSlide>
       ))}
       <ButtonSlidePrev iref={navigationPrevRef} />

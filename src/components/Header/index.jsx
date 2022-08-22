@@ -1,21 +1,22 @@
-import Tippy from '@tippyjs/react';
-import { AiOutlineSetting } from 'react-icons/ai';
-import { HiOutlineUpload } from 'react-icons/hi';
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
-import { IoSearchOutline, IoShirtOutline } from 'react-icons/io5';
-import { IoIosTrendingUp } from 'react-icons/io';
-import { RiVipDiamondLine } from 'react-icons/ri';
-import { NavLink } from 'react-router-dom';
-import 'tippy.js/dist/tippy.css';
+import React from "react";
+import Tippy from "@tippyjs/react";
+import { AiOutlineSetting } from "react-icons/ai";
+import { HiOutlineUpload } from "react-icons/hi";
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import { IoSearchOutline, IoShirtOutline } from "react-icons/io5";
+import { IoIosTrendingUp } from "react-icons/io";
+import { RiVipDiamondLine } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
+import "tippy.js/dist/tippy.css";
 
 const Header = () => {
   return (
-    <header className="h-[70px] flex items-center fixed top-0 left-60 right-0 px-14 bg-layout-bg z-50">
+    <header className="h-[70px] flex items-center justify-between fixed top-0 left-60 bg-layout-bg z-50 px-14 right-0">
       <div className="flex items-center flex-grow mr-[10px]">
-        <button disabled>
+        <button disabled={true}>
           <IoIosArrowRoundBack className="w-6 h-6 mr-5 text-gray-600" />
         </button>
-        <button disabled>
+        <button disabled={true}>
           <IoIosArrowRoundForward className="w-6 h-6 mr-5 text-gray-600" />
         </button>
         <form className="w-full max-w-[540px] relative">
@@ -71,10 +72,16 @@ const Header = () => {
             <AiOutlineSetting className="w-5 h-5" />
           </button>
         </Tippy>
-        <img className="items-header" src="https://avatar.talk.zdn.vn/default" alt="avatar" width={40} height={40} />
+        <img
+          className="items-header"
+          src="https://avatar.talk.zdn.vn/default"
+          alt="avatar"
+          width={40}
+          height={40}
+        />
       </div>
     </header>
   );
 };
 
-export default Header;
+export default React.memo(Header);

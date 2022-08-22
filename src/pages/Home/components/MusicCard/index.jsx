@@ -1,9 +1,9 @@
-import Tippy from '@tippyjs/react';
+import Tippy from "@tippyjs/react";
 
-import { BsPlayFill } from 'react-icons/bs';
-import { FiHeart, FiMoreHorizontal } from 'react-icons/fi';
-import { NavLink } from 'react-router-dom';
-const MusicCard = () => {
+import { BsPlayFill } from "react-icons/bs";
+import { FiHeart, FiMoreHorizontal } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
+const MusicCard = ({ content }) => {
   return (
     <>
       <div className="relative group cursor-pointer rounded-md overflow-hidden mb-2">
@@ -28,14 +28,22 @@ const MusicCard = () => {
           </Tippy>
         </div>
       </div>
-      <NavLink to="#" href="./" className="font-bold hover:text-text-hover capitalize">
-        Remix việt hay nhất
-      </NavLink>
-      <p className="text-text-gray">
-        <NavLink to="#" className="hover:text-text-hover">
-          Jack-J97,
-        </NavLink>
-      </p>
+      {content && (
+        <div>
+          <NavLink
+            to="#"
+            href="./"
+            className="font-bold hover:text-text-hover capitalize"
+          >
+            Remix việt hay nhất
+          </NavLink>
+          <p className="text-text-gray">
+            <NavLink to="#" className="hover:text-text-hover">
+              Jack-J97,
+            </NavLink>
+          </p>
+        </div>
+      )}
     </>
   );
 };

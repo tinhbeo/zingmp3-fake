@@ -1,12 +1,13 @@
-import SliderHome from 'pages/Home/components/SliderHome';
-import { VscChevronRight } from 'react-icons/vsc';
+import React from "react";
+import SliderHome from "pages/Home/components/SliderHome";
+import { VscChevronRight } from "react-icons/vsc";
 
-import { NavLink } from 'react-router-dom';
-import Media from './components/Media';
-import MusicCard from './components/MusicCard';
+import { NavLink } from "react-router-dom";
+import Media from "./components/Media";
+import MusicCard from "./components/MusicCard";
 const Home = () => {
   return (
-    <div className="h-screen">
+    <>
       <div className="py-8">
         <SliderHome />
       </div>
@@ -24,20 +25,22 @@ const Home = () => {
           </NavLink>
         </h3>
         <div className="flex gap-7">
-          <div className="w-1/6 overflow-hidden max-w-[170px] max-h-[170px] min-w-[150px] min-h-[150px]">
+          <div className="overflow-hidden w-[150px]">
             <MusicCard />
           </div>
-          <div className="w-1/6 overflow-hidden max-w-[170px] max-h-[170px] min-w-[150px] min-h-[150px]">
+          <div className="overflow-hidden w-[150px]">
             <MusicCard />
           </div>
         </div>
       </div>
 
       <div className="mt-[30px]">
-        <h3 className="mb-4 font-bold text-xl capitalize">Có thể bạn muốn nghe</h3>
+        <h3 className="mb-4 font-bold text-xl capitalize">
+          Có thể bạn muốn nghe
+        </h3>
         <div className="flex">
-          <div className="w-1/5 overflow-hidden min-w-[150px]">
-            <MusicCard />
+          <div className="w-1/5 overflow-hidden">
+            <MusicCard content={true} />
           </div>
         </div>
       </div>
@@ -50,7 +53,7 @@ const Home = () => {
               Bài hát
             </button>
 
-            <button className="py-1 px-6 rounded-full bg-transparent text-white uppercase text-xs border-border-alpha">
+            <button className="py-1 px-6 rounded-full bg-transparent text-white uppercase text-xs border border-border-alpha">
               ALBUM
             </button>
           </div>
@@ -82,8 +85,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default React.memo(Home);

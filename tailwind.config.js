@@ -14,10 +14,14 @@ module.exports = {
         'border-alpha': 'hsla(0,0%,100%,0.1)',
         'text-gray': 'hsla(0,0%,100%,0.5)',
         'hover-icon': 'hsla(0,0%,100%,0.3)',
+        'scrollbar': 'hsla(0,0%,100%,0.3)',
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        'vip': "url('https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.21/static/media/vip-label.3dd6ac7e.svg')"
+      }
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
