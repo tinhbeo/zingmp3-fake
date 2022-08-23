@@ -5,6 +5,8 @@ import { VscChevronRight } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 import Media from "./components/Media";
 import MusicCard from "./components/MusicCard";
+import FavoriteArtist from "./components/FavoriteArtist";
+import { favoriteArtists } from "static/data.js";
 const Home = () => {
   return (
     <>
@@ -83,6 +85,22 @@ const Home = () => {
             <Media vip={true} />
             <Media vip={true} />
           </div>
+        </div>
+      </div>
+      <div>
+        <h3 className="text-xl font-bold capitalize mb-4 mt-[30px]">
+          nghệ sĩ yêu thích
+        </h3>
+        <div className="flex gap-7">
+          {favoriteArtists.map((favoriteArtist, index) => (
+            <div key={index} className="w-1/5">
+              <FavoriteArtist
+                name={favoriteArtist.name}
+                avatar={favoriteArtist.avatar}
+                images={favoriteArtist.images}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </>
