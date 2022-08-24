@@ -1,3 +1,4 @@
+import ZingChart from 'components/ZingChart';
 import Header from 'components/Header';
 import Scrollbar from 'components/Scrollbar';
 import Sidebar from 'components/Sidebar';
@@ -23,6 +24,7 @@ function App() {
           <div className="mt-[70px]" >
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/chart" element={<ZingChart />} />
             </Routes>
           </div>
         </div>
