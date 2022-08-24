@@ -8,7 +8,7 @@ const MusicCard = ({ content }) => {
     <>
       <div className="relative group cursor-pointer rounded-md overflow-hidden mb-2">
         <img
-          className="group-hover:scale-110 ease-in-out duration-300"
+          className="group-hover:scale-110 ease-in-out duration-500"
           src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/e/d/2/5/ed251cf560be4747e7737b535c357f07.jpg"
           alt=""
         />

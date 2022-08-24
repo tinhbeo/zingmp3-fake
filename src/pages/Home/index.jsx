@@ -7,6 +7,8 @@ import Media from "./components/Media";
 import MusicCard from "./components/MusicCard";
 import FavoriteArtist from "./components/FavoriteArtist";
 import { favoriteArtists } from "static/data.js";
+import SlideArtis from "./components/SlideArtis";
+import MediaRanking from "./components/MediaRanking";
 const Home = () => {
   return (
     <>
@@ -14,7 +16,7 @@ const Home = () => {
         <SliderHome />
       </div>
 
-      <div className="mt-[30px]">
+      <section>
         <h3 className="flex justify-between items-center mb-4 font-bold text-xl capitalize">
           Gần đây
           <NavLink
@@ -34,9 +36,9 @@ const Home = () => {
             <MusicCard />
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-[30px]">
+      <section>
         <h3 className="mb-4 font-bold text-xl capitalize">
           Có thể bạn muốn nghe
         </h3>
@@ -45,9 +47,9 @@ const Home = () => {
             <MusicCard content={true} />
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mt-[30px]">
+      <section>
         <h3 className="mb-4 font-bold text-xl capitalize">Mới phát hành</h3>
         <div className="mb-[30px] flex items-center justify-between">
           <div>
@@ -86,11 +88,10 @@ const Home = () => {
             <Media vip={true} />
           </div>
         </div>
-      </div>
-      <div>
-        <h3 className="text-xl font-bold capitalize mb-4 mt-[30px]">
-          nghệ sĩ yêu thích
-        </h3>
+      </section>
+
+      <section>
+        <h3 className="text-xl font-bold capitalize mb-4">nghệ sĩ yêu thích</h3>
         <div className="flex gap-7">
           {favoriteArtists.map((favoriteArtist, index) => (
             <div key={index} className="w-1/5">
@@ -102,7 +103,30 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      <section>
+        <SlideArtis />
+      </section>
+
+      <section>
+        <h3 className="flex justify-between items-center mb-4 font-bold text-xl capitalize">
+          Nhạc mới
+          <NavLink
+            to="#"
+            href="./"
+            className="flex items-center text-xs uppercase text-text-gray font-medium hover:text-text-hover"
+          >
+            tất cả
+            <VscChevronRight className="text-base ml-[6px]" />
+          </NavLink>
+        </h3>
+        <div>
+          <div className="w-1/3">
+            <MediaRanking />
+          </div>
+        </div>
+      </section>
     </>
   );
 };

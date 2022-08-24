@@ -23,10 +23,14 @@
   }
 
   img {
-    @apply w-full object-cover
+    @apply w-full object-cover h-auto
   }
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+section {
+  margin-top: 30px;
 }

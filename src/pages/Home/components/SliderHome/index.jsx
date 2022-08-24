@@ -1,26 +1,24 @@
 import React from "react";
 import { images } from "static/data";
-import { Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ButtonSlideNext from "../ButtonSlideNext";
-import ButtonSlidePrev from "../ButtonSlidePrev";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 const SliderHome = () => {
-  const navigationPrevRef = React.useRef(null);
-  const navigationNextRef = React.useRef(null);
   return (
     <Swiper
       className="group"
-      modules={[Navigation]}
+      modules={[Navigation, Autoplay]}
       spaceBetween={20}
       loop={true}
+      autoplay={true}
       slidesPerView={3}
       navigation={{
-        prevEl: navigationPrevRef.current,
-        nextEl: navigationNextRef.current,
+        prevEl: ".prev",
+        nextEl: ".next",
       }}
     >
       {images.map((image, index) => (
@@ -33,8 +31,14 @@ const SliderHome = () => {
           />
         </SwiperSlide>
       ))}
-      <ButtonSlidePrev iref={navigationPrevRef} />
-      <ButtonSlideNext iref={navigationNextRef} />
+
+      <span className="prev absolute w-[55px] h-[55px] text-3xl z-10 rounded-full cursor-pointer text-white top-1/2 -translate-y-1/2 left-6 group-hover:flex items-center justify-center hover:bg-hover-icon select-none hidden">
+        <HiOutlineChevronLeft />
+      </span>
+
+      <span className="next absolute w-[55px] h-[55px] text-3xl z-10 rounded-full cursor-pointer text-white top-1/2 -translate-y-1/2 right-6 group-hover:flex items-center justify-center hover:bg-hover-icon select-none hidden">
+        <HiOutlineChevronRight />
+      </span>
     </Swiper>
   );
 };
