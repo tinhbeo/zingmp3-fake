@@ -6,24 +6,25 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./style.css";
-import { imagesArtis } from "static/data";
+import { singerImages } from "static/data";
 import { NavLink } from "react-router-dom";
 
-const SlideArtis = () => {
+const SlideSingers = () => {
   return (
-    <div className="relative">
+    <div className="relative select-none">
       <Swiper
         modules={[Navigation, Autoplay]}
         spaceBetween={28}
         slidesPerView={7}
         slidesPerGroup={7}
         autoplay={true}
+        allowTouchMove={false}
         navigation={{
           prevEl: ".prev",
           nextEl: ".next",
         }}
       >
-        {imagesArtis.map((image, index) => (
+        {singerImages.map((image, index) => (
           <SwiperSlide key={index} className="hover:opacity-70">
             <NavLink to="#">
               <img src={image} loading="lazy" alt="slide-img" />
@@ -42,4 +43,4 @@ const SlideArtis = () => {
   );
 };
 
-export default SlideArtis;
+export default SlideSingers;

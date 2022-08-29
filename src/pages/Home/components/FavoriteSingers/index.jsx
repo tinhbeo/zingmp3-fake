@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { BsPlayFill } from "react-icons/bs";
-const FavoriteArtist = (props) => {
+const FavoriteSingers = (props) => {
   const { name, avatar, images } = props;
   return (
     <div>
@@ -42,4 +42,4 @@ const FavoriteArtist = (props) => {
   );
 };
 
-export default FavoriteArtist;
+export default FavoriteSingers;

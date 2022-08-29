@@ -1,35 +1,51 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
-const MediaRanking = () => {
+import { BsPlayFill } from "react-icons/bs";
+const MediaRanking = (props) => {
+  const { image, name, singers, time, ranking } = props;
   return (
-    <div className="bg-[#2f2739] w-full flex p-[15px]">
-      <figure className="mr-[10px]">
-        <img
-          src="https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg"
-          alt=""
-        />
-      </figure>
-      <div className="flex flex-col justify-between">
+    <div className="bg-[#2f2739] w-full flex p-[15px] rounded select-none group cursor-pointer">
+      <div className="mr-[10px] w-[120px] h-[120px] overflow-hidden rounded relative">
+        <figure>
+          <img
+            className="hover:scale-110 ease-in-out duration-700 "
+            src={image}
+            alt=""
+          />
+        </figure>
+        <div className="absolute inset-0 justify-center items-center bg-[#00000080] hidden group-hover:flex">
+          <div className="border border-white border-solid rounded-full">
+            <BsPlayFill className="text-4xl" />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-between flex-grow">
         <div>
-          <p className="text-base font-bold capitalize">waiting for you</p>
+          <p className="text-base font-bold capitalize">{name}</p>
           <p className="text-xs mt-[3px] text-[#ffffff80]">
-            <NavLink to="#">
-              <span className="hover:text-text-hover hover:underline">
-                MONO
-              </span>
-            </NavLink>
-            {", "}
-            <NavLink to="#">
-              <span className="hover:text-text-hover hover:underline">
-                Onion
-              </span>
-            </NavLink>
+            {singers &&
+              singers.map((singer, index) => (
+                <span key={index}>
+                  {index === 0 ? null : ", "}
+                  <NavLink
+                    to="#"
+                    className="hover:text-text-hover hover:underline"
+                  >
+                    {singer}
+                  </NavLink>
+                  {/* {", "} */}
+                </span>
+              ))}
           </p>
         </div>
-        <div>
-          <span>#1</span>
-          <span>24.08.2022</span>
+        <div className="flex items-baseline justify-between">
+          <span
+            style={{ WebkitTextStroke: "1px #fff" }}
+            className="text-[40px] text-transparent font-black opacity-40"
+          >
+            #{ranking}
+          </span>
+          <span className="text-sm opacity-40">{time}</span>
         </div>
       </div>
     </div>

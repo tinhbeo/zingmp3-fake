@@ -13,8 +13,10 @@ const SliderHome = () => {
       className="group"
       modules={[Navigation, Autoplay]}
       spaceBetween={20}
-      loop={true}
-      autoplay={true}
+      loop
+      autoplay={{
+        delay: 5000,
+      }}
       slidesPerView={3}
       navigation={{
         prevEl: ".prev",

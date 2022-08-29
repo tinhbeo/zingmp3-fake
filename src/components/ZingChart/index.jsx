@@ -20,12 +20,22 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
 const ZingChart = () => {
   const options = {
     responsive: true,
+    elements: {
+      point: {
+        radius: 0,
+        hoverRadius: 8,
+        hoverBorderWidth: 3,
+        pointBorderColor: "#fff",
+      },
+    },
     interaction: {
-      mode: "index",
+      mode: "nearest",
       intersect: false,
+      axis: "xy",
     },
     plugins: {
       legend: {
@@ -34,30 +44,42 @@ const ZingChart = () => {
     },
     scales: {
       y: {
-        display: false,
-        gridLine: {
+        display: true,
+        grid: {
+          tickLength: 0,
+          color: "#ccc",
+          borderDash: [1, 5],
+          drawBorder: true,
+        },
+        ticks: {
           display: false,
         },
       },
+      x: {
+        display: true,
+        grid: {
+          tickLength: 0,
+          drawBorder: false,
+          drawOnChartArea: false,
+        },
+      },
     },
+    // onHover: () => console.log("hover"),
   };
 
-  const labels = [1, 2, 3, 4, 5];
   const data = {
-    labels,
+    labels: [1, 2, 3, 4, 5, 6, 7],
     datasets: [
       {
-        label: false,
-        data: [120, 240, 500, 200, 400],
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        data: [120, 240, 500, 200, 400, 321, 111],
+        borderColor: "#e35050",
+        backgroundColor: "#e35050",
         cubicInterpolationMode: "monotone",
       },
       {
-        label: [],
-        data: [200, 300, 100, 270, 500],
+        data: [200, 300, 120, 270, 500, 454, 123],
         borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        backgroundColor: "rgb(53, 162, 235)",
         cubicInterpolationMode: "monotone",
       },
     ],

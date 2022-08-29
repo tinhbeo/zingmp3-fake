@@ -1,13 +1,17 @@
 import React from "react";
 import SliderHome from "pages/Home/components/SliderHome";
 import { VscChevronRight } from "react-icons/vsc";
-
 import { NavLink } from "react-router-dom";
+import { Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 import Media from "./components/Media";
 import MusicCard from "./components/MusicCard";
-import FavoriteArtist from "./components/FavoriteArtist";
-import { favoriteArtists } from "static/data.js";
-import SlideArtis from "./components/SlideArtis";
+import FavoriteSingers from "./components/FavoriteSingers";
+import { favoriteSingers } from "static/data";
+import { newMusics } from "static/data";
+import SlideSingers from "./components/SlideSingers";
 import MediaRanking from "./components/MediaRanking";
 const Home = () => {
   return (
@@ -48,7 +52,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+      {/* New release */}
       <section>
         <h3 className="mb-4 font-bold text-xl capitalize">Mới phát hành</h3>
         <div className="mb-[30px] flex items-center justify-between">
@@ -89,13 +93,13 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+      {/* Favorite Singers */}
       <section>
         <h3 className="text-xl font-bold capitalize mb-4">nghệ sĩ yêu thích</h3>
         <div className="flex gap-7">
-          {favoriteArtists.map((favoriteArtist, index) => (
+          {favoriteSingers.map((favoriteArtist, index) => (
             <div key={index} className="w-1/5">
-              <FavoriteArtist
+              <FavoriteSingers
                 name={favoriteArtist.name}
                 avatar={favoriteArtist.avatar}
                 images={favoriteArtist.images}
@@ -104,11 +108,11 @@ const Home = () => {
           ))}
         </div>
       </section>
-
+      {/* Slide Singers */}
       <section>
-        <SlideArtis />
+        <SlideSingers />
       </section>
-
+      {/* New Music */}
       <section>
         <h3 className="flex justify-between items-center mb-4 font-bold text-xl capitalize">
           Nhạc mới
@@ -122,11 +126,31 @@ const Home = () => {
           </NavLink>
         </h3>
         <div>
-          <div className="w-1/3">
-            <MediaRanking />
-          </div>
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 5000,
+            }}
+            slidesPerView={3}
+            spaceBetween={28}
+            slidesPerGroup={3}
+            allowTouchMove={false}
+          >
+            {newMusics.map((newMusic, index) => (
+              <SwiperSlide key={index}>
+                <MediaRanking
+                  image={newMusic.image}
+                  name={newMusic.name}
+                  singers={newMusic.singers}
+                  ranking={newMusic.ranking}
+                  time={newMusic.time}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
+      <section></section>
     </>
   );
 };

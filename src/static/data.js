@@ -5,7 +5,7 @@ export const images = [
     'https://photo-zmp3.zmdcdn.me/banner/2/f/9/a/2f9a9727c784170ac85b6c401af8a8db.jpg',
 ];
 
-export const favoriteArtists = [
+export const favoriteSingers = [
     {
         name: 'Soobin',
         avatar: 'https://photo-resize-zmp3.zmdcdn.me/w480_r2x3_webp/cover_artist/1/5/6/c/156c8abddc5952a112c02d8d5f2a82f6.jpg',
@@ -55,7 +55,7 @@ export const favoriteArtists = [
 ]
 
 
-export const imagesArtis = [
+export const singerImages = [
     'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/trinh-thanh-binh.png',
     'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/onlyc.png',
     'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/duc-phuc.png',
@@ -68,3 +68,40 @@ export const imagesArtis = [
     'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/justatee.png',
     'https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/zma-2021/imgs/karik.png',
 ];
+export const newMusics = [
+    {
+        image: 'https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/d/f/9/b/df9b187a2b0e565ebe5b6bd60bdef622.jpg',
+        name: 'tòng phu',
+        singers: ['keyo'],
+        ranking: '1',
+        time: '16.08.2022'
+    },
+    {
+        image: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/d/1/9/3/d1932789be14e130e31c012082340e17.jpg',
+        name: 'xin lỗi con hư',
+        singers: ['Hà Anh', 'M.Ryan'],
+        ranking: '2',
+        time: '20.08.2022'
+    },
+    {
+        image: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/8/7/7/c/877cd81f44ad324d1d215903d4c18041.jpg',
+        name: 'muốn anh là của em',
+        singers: ['Kiều Trang', 'X2X', 'LY.M'],
+        ranking: '3',
+        time: '20.08.2022'
+    },
+    {
+        image: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg',
+        name: 'waiting for you',
+        singers: ['MONO', 'Onionn'],
+        ranking: '4',
+        time: '20.08.2022'
+    },
+    {
+        image: 'https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/3/8/e/238ec4483ac15aef0c29994fa0cba8e2.jpg',
+        name: 'quen',
+        singers: ['Dương Hoàng Yến'],
+        ranking: '5',
+        time: '20.08.2022'
+    }
+]
